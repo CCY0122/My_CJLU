@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.diy_indicator.MainActivity">
+    android:orientation="vertical">
 
     <com.example.diy_indicator.ViewIndicator
         android:id="@+id/view_indicator"
@@ -14,7 +12,6 @@
         android:background="#FF4040"
         android:orientation="horizontal"
         android:baselineAligned="false">
-
         <TextView
             android:id="@+id/view_1"
             android:layout_width="0dp"
@@ -25,6 +22,7 @@
             android:gravity="center"
             android:background="?android:attr/selectableItemBackground"
             android:textColor="#ffffffff" />
+
 
         <TextView
             android:id="@+id/view_2"
