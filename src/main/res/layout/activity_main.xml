@@ -11,66 +11,54 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:paddingTop="20dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="#FF4040"
         android:orientation="horizontal"
         android:baselineAligned="false">
 
         <TextView
             android:id="@+id/view_1"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="两字"
+            android:text="我的"
             android:textSize="17sp"
             android:gravity="center"
-            android:textColor="#ffffffff"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:textColor="#ffffffff" />
 
         <TextView
             android:id="@+id/view_2"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="三个字"
+            android:text="实验"
             android:textSize="17sp"
             android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
             android:textColor="#bbffffff"/>
 
         <TextView
             android:id="@+id/view_3"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="有四个字"
+            android:text="吐槽"
             android:textSize="17sp"
             android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
             android:textColor="#bbffffff"/>
         <TextView
             android:id="@+id/view_5"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="有四字"
+            android:text="支持作者"
             android:textSize="17sp"
             android:gravity="center"
+            android:background="?android:attr/selectableItemBackground"
             android:textColor="#bbffffff"/>
-        <TextView
-            android:id="@+id/view_6"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:text="四个字"
-            android:textSize="17sp"
-            android:gravity="center"
-            android:textColor="#bbffffff"/>
-        <TextView
-            android:id="@+id/view_7"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:text="有四个"
-            android:textSize="17sp"
-            android:gravity="center"
-            android:textColor="#bbffffff"/>
+
+
 
 
     </com.example.diy_indicator.ViewIndicator>
@@ -81,4 +69,6 @@
         android:layout_height="match_parent">
 
     </android.support.v4.view.ViewPager>
+
+
 </LinearLayout>

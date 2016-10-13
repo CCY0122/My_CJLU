@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_2">
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/f2_recyclerview"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="aasdasdasdadad"
-        android:gravity="center"
-        android:textSize="40sp"/>
+
+</android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

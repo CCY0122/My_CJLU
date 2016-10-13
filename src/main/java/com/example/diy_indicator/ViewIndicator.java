@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.diy_indicator.util.ScreenSize;
 
@@ -23,13 +22,13 @@ import com.example.diy_indicator.util.ScreenSize;
  * 自定义的顶部导航栏，底部指示器为一个小三角形
  * 可自定义一屏显示多少个tab标签（通过设置visibleItemCount）    ps：请不要让tab数少于visibleItemCount
  * 多出的部分会布局到屏幕外，通过滑动内容区域或点击tab或滑动导航栏时，会自动滑出其他的tab
- * 已解决点击与滑动的事件冲突
+ * 解决点击与滑动的事件冲突
  *
  */
 public class ViewIndicator extends LinearLayout {
 
     private static final int SELECTED_COLOR = 0XFFffffff;
-    private static final int NORMAL_COLOR = 0XAAffffff;
+    private static final int NORMAL_COLOR = 0XBBffffff;
 
     private Context context;
 
@@ -118,7 +117,7 @@ public class ViewIndicator extends LinearLayout {
                         ((TextView) v).setTextColor(SELECTED_COLOR);
                         viewPager.setCurrentItem(j);
 //                        Toast.makeText(context,"click"+j,Toast.LENGTH_SHORT).show();
-                        Log.d("ccy2","onclick");
+//                        Log.d("ccy2","onclick");
                     }
                 }
             });
@@ -131,7 +130,7 @@ public class ViewIndicator extends LinearLayout {
         canvas.translate(itemWidth/2 - triangleWidth/2 + triangleTranslate  ,getMeasuredHeight()+5);
         canvas.drawPath(path,paint);
         canvas.restore();
-        Log.d("ccy","dispatchDraw");
+//        Log.d("ccy","dispatchDraw");
 
         super.dispatchDraw(canvas);
 
@@ -150,21 +149,21 @@ public class ViewIndicator extends LinearLayout {
 
         triangleTranslate = 0;
         allItemCount = getChildCount();
-        visibleItemCount = 4;
+        visibleItemCount = 3;
         screenWidth = ScreenSize.getScreenSize(context).x;
-        itemWidth = screenWidth / visibleItemCount;
+        itemWidth = (int) (screenWidth / (visibleItemCount));
         triangleWidth = itemWidth / 6 ;
         getLayoutParams().width = itemWidth *allItemCount;
         requestLayout();
         initPath();
-        Log.d("ccy","onsizechanged"+w+"-"+h+"--"+oldw+"-"+oldh);
+//        Log.d("ccy","onsizechanged"+w+"-"+h+"--"+oldw+"-"+oldh);
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
         setChildItemClick();
-        Log.d("ccy","onfinishinflate");
+//        Log.d("ccy","onfinishinflate");
 
     }
     int lastx;
@@ -209,8 +208,8 @@ public class ViewIndicator extends LinearLayout {
                 }else {
                     scrollBy(-deltaX, 0);
                 }
-                Log.d("ccy1",""+getScrollX() );
-                Log.d("ccy1","----"+getLayoutParams().width);
+//                Log.d("ccy1",""+getScrollX() );
+//                Log.d("ccy1","----"+getLayoutParams().width);
                 break;
             case MotionEvent.ACTION_UP:
                 if(getScrollX()<0) {
@@ -222,7 +221,7 @@ public class ViewIndicator extends LinearLayout {
         }
         lastx =x;
 
-        Log.d("ccy","ontouch");
+//        Log.d("ccy","ontouch");
 
         return true;
     }
