@@ -4,6 +4,8 @@ android {
     compileSdkVersion 23
     buildToolsVersion '24.0.0 rc4'
 
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
         applicationId "com.example.diy_indicator"
@@ -27,4 +29,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
     compile 'com.android.support:appcompat-v7:24.1.1'
+
+    compile 'cn.bmob.android:bmob-sdk:3.5.1'
+    compile 'cn.bmob.android:bmob-push:1.0.0'
+    compile 'cn.bmob.android:http-legacy:1.0'
 }
