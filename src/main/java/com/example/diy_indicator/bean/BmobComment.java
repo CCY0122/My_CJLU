@@ -11,6 +11,17 @@ public class BmobComment extends BmobObject {
 
     private Integer agreeCount =0;
     private String content;
+    private boolean agreeFlag = false;
+    private Integer commentCount = 0;
+
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
+    }
+
 
     public boolean isAgreeFlag() {
         return agreeFlag;
@@ -19,8 +30,6 @@ public class BmobComment extends BmobObject {
     public void setAgreeFlag(boolean agreeFlag) {
         this.agreeFlag = agreeFlag;
     }
-
-    private boolean agreeFlag = false;
 
 
 

@@ -1,6 +1,7 @@
 package com.example.diy_indicator.fragmentView.Fragment_3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.diy_indicator.MainActivity;
 import com.example.diy_indicator.R;
 import com.example.diy_indicator.bean.BmobComment;
 
@@ -49,6 +51,7 @@ public class F3_Adapter extends RecyclerView.Adapter<mmViewHolder>{
         holder.content.setText(bean.getContent()+"");
         holder.time.setText(bean.getCreatedAt()+"");
         holder.agreecount.setText(bean.getAgreeCount()+"");
+//        holder.commentcount.setText(bean.getCommentCount()+"");
         boolean flag = bean.isAgreeFlag();
         holder.agree.setImageResource(flag? R.drawable.agree_1 : R.drawable.agree);
         holder.agree.setOnClickListener(new View.OnClickListener() {
@@ -68,14 +71,18 @@ public class F3_Adapter extends RecyclerView.Adapter<mmViewHolder>{
                 });
                 holder.agreecount.setText("");
                 holder.agree.setImageResource(R.drawable.agree_1);
-                notifyDataSetChanged();
-//                notifyItemChanged(position);
+//                notifyDataSetChanged();
+                notifyItemChanged(position);
             }
         });
         holder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"即将推出",Toast.LENGTH_SHORT).show();
+                BmobComment comment = data.get(position);
+                String id = comment.getObjectId();
+                Intent intent = new Intent(context,CommentActivity.class);
+                intent.putExtra("id",id);
+                context.startActivity(intent);
             }
         });
     }
@@ -87,7 +94,7 @@ public class F3_Adapter extends RecyclerView.Adapter<mmViewHolder>{
 }
 class mmViewHolder extends RecyclerView.ViewHolder{
 
-    TextView content,time,agreecount;
+    TextView content,time,agreecount,commentcount;
     ImageView agree,comment;
 
     public mmViewHolder(View itemView) {
@@ -95,6 +102,7 @@ class mmViewHolder extends RecyclerView.ViewHolder{
         content = (TextView) itemView.findViewById(R.id.com_content);
         time = (TextView) itemView.findViewById(R.id.com_time);
         agreecount = (TextView)itemView.findViewById(R.id.com_agree_count);
+//        commentcount = (TextView) itemView.findViewById(R.id.com_comment_count);
         agree = (ImageView) itemView.findViewById(R.id.com_agree);
         comment = (ImageView) itemView.findViewById(R.id.com_comment);
 

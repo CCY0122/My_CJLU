@@ -13,6 +13,8 @@ import android.view.WindowManager;
 import com.example.diy_indicator.fragmentView.fragment_1.Fragment_1;
 import com.example.diy_indicator.fragmentView.fragment_2.Fragment_2;
 import com.example.diy_indicator.fragmentView.Fragment_3.Fragment_3;
+import com.example.diy_indicator.fragmentView.fragment_4.Fragment_4;
+import com.tencent.bugly.Bugly;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment1;
     private Fragment fragment2;
     private Fragment fragment3;
+    private Fragment fragment4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
             lp.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | lp.flags);//沉浸式状态栏 透明
         }
         setContentView(R.layout.activity_main);
+
+        initBugly();
         
         initBmob();
 
@@ -50,12 +55,17 @@ public class MainActivity extends AppCompatActivity {
         initViewPager();
     }
 
+    private void initBugly() {
+        Bugly.init(getApplicationContext(), "412e9fece2", false);
+    }
+
     private void initBmob() {
         Bmob.initialize(this, "e0534a119023df75eb89a91d0b9d8e30");
-        // 使用推送服务时的初始化操作
-        BmobInstallation.getCurrentInstallation().save();
-        // 启动推送服务
-        BmobPush.startWork(this);
+
+//        // 使用推送服务时的初始化操作
+//        BmobInstallation.getCurrentInstallation().save();
+//        // 启动推送服务
+//        BmobPush.startWork(this);
     }
 
 
@@ -65,13 +75,14 @@ public class MainActivity extends AppCompatActivity {
         fragment1  = new Fragment_1();
         fragment2 = new Fragment_2();
         fragment3 = new Fragment_3();
+        fragment4 = new Fragment_4();
 
     }
     private void initData() {
         fragmentList.add(fragment1);
         fragmentList.add(fragment2);
         fragmentList.add(fragment3);
-        fragmentList.add(new Fragment_2());
+        fragmentList.add(fragment4);
 
 
     }

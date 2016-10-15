@@ -33,8 +33,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:text="吐槽"
-            android:textSize="18sp"
-            android:background="#FFF5EE"/>
+            android:textSize="18sp" />
     </LinearLayout>
 
 

@@ -48,7 +48,8 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="8dp"
-                android:src="@drawable/comment"/>
+                android:src="@drawable/comment" />
+
 
 
         </LinearLayout>

@@ -110,9 +110,10 @@ public class Fragment_3 extends Fragment {
                         @Override
                         public void done(String s, BmobException e) {
                             if(e == null){
-//                                Toast.makeText(getContext(),"success",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(),"发送成功",Toast.LENGTH_SHORT).show();
+                                pushEdit.setText("");
                             }else {
-                                Toast.makeText(getContext(),"failed",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(),"发送失败",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -129,6 +130,7 @@ public class Fragment_3 extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Log.d("ccy22","runnable");
                 BmobQuery<BmobComment> query = new BmobQuery<>();
                 query.setLimit(30);
                 query.order("-createdAt");
