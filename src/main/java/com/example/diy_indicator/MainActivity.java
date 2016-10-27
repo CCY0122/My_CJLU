@@ -62,10 +62,11 @@ public class MainActivity extends AppCompatActivity {
     private void initBmob() {
         Bmob.initialize(this, "e0534a119023df75eb89a91d0b9d8e30");
 
-//        // 使用推送服务时的初始化操作
-//        BmobInstallation.getCurrentInstallation().save();
-//        // 启动推送服务
-//        BmobPush.startWork(this);
+
+        // 使用推送服务时的初始化操作
+        BmobInstallation.getCurrentInstallation().save();
+        // 启动推送服务
+        BmobPush.startWork(this);
     }
 
 
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         fragment2 = new Fragment_2();
         fragment3 = new Fragment_3();
         fragment4 = new Fragment_4();
+
 
     }
     private void initData() {

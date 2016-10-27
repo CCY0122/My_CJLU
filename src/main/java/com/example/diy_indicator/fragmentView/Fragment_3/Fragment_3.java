@@ -58,10 +58,16 @@ public class Fragment_3 extends Fragment {
         }
     };
 
+    public Fragment_3() {
+        super();
+        initData();
+
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initData();
+//        initData();
     }
 
     @Nullable
